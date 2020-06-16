@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('client.home');
+        return view('client.home.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('client.product.detailProduct');
     }
 
     /**
@@ -46,7 +46,7 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
