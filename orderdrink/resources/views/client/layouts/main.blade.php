@@ -32,11 +32,11 @@
 <body class="bg-light">
 
   <!--Header-->
-  @include("client.shareds.header")
+  @include("client.shared.header")
   <!--Categoris-->
-  @include("client.shareds.categoriProduct")
+  @include("client.shared.categoriProduct")
   <!--TagScroller-->
-  @include("client.shareds.tagscroller")
+  @include("client.shared.tagscroller")
   <!--Main-->
   @yield('content')
 

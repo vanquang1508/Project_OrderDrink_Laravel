@@ -9,6 +9,8 @@ Auth::routes(['verify' => true]);
 Route::group(['namespace'=>'Admin'],function (){
     Route::group(['prefix'=>'admin'],function () {
     	Route::get('/home', 'HomeController@index')->name('home');
+    	Route::resource('about','Aboutcontroller');
+		Route::delete('about_delete', 'AboutController@destroy')->name('about_delete');
 
     });
 });

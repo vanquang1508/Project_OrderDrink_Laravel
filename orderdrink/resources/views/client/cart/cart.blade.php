@@ -42,5 +42,5 @@
 </div>
 @endsection
 @section('scriptClient')
-@include('client.shareds.scriptClient')
+@include('client.shared.scriptClient')
 @endsection
