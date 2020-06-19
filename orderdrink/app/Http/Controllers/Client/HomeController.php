@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Repositories\Interfaces\ProductInterface;
+use App\Repositories\Interfaces\ProductDetailInterface;
 
 class HomeController extends Controller
 {
@@ -12,9 +14,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $productRepo;
+    private $productdetailRepo;
+    //Goi ham khoi tao
+    public function __construct(ProductInterface $productRepository,ProductDetailInterface $productdetailRepository)
+    {
+        $this->productRepo = $productRepository;
+        $this->productdetailRepo = $productdetailRepository;
+    }
     public function index()
     {
-        return view('client.home.index');
+        $products = $this->productRepo->getAll(); 
+        return view('client.home.index',compact('products'));
     }
 
     /**
@@ -44,9 +55,11 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        
+        $product = $this->productRepo->getBySlug($slug); 
+        $sizes = $this->productdetailRepo->getByProductId($product->id);   
+        return view('client.product.detailProduct',compact('product','sizes'));
     }
 
     /**
@@ -81,5 +94,10 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getSize(Request $request)
+    {
+        $sizes = $this->productdetailRepo->getByProductId($request->product_id); 
+        return response()->json(array('success'=> true, 'sizes' => $sizes));
     }
 }

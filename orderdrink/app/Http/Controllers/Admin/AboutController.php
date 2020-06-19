@@ -15,13 +15,14 @@ class AboutController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */ 
     //Khai bao Repository
     private $aboutRepo;
     //Goi ham khoi tao
     public function __construct(AboutInterface $aboutRepository)
     {
         $this->aboutRepo = $aboutRepository;
+        $this->middleware('auth');
     }
     public function index()
     {
