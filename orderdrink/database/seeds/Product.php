@@ -20,6 +20,16 @@ class Product extends Seeder
         	'isdisplay'=>true,
         ]);
 
+        DB::table('brands')->insert([
+            'id'=>'1',
+            'name'=>'ABC',
+            'logo'=>'n2.jpg',
+            'address'=>'THDJISK BDHDJ',
+            'phone_no'=>'0854754585',
+            'slug'=>'abc',
+            'isdelete'=>false,
+        ]);
+
         DB::table('products')->insert([
         	'product_code'=>'THK0125',
         	'name'=>'M001',
@@ -28,7 +38,8 @@ class Product extends Seeder
         	'image'=>'n2.jpg',
         	'promotion'=>'0',
         	'category_id'=>'1',
-        	'status'=>true,
+            'brand_id'=>'1',
+        	'quantity'=>100,
         	'isdelete'=>false,
         	'isdisplay'=>true,
         ]);
@@ -41,7 +52,8 @@ class Product extends Seeder
         	'image'=>'n2.jpg',
         	'promotion'=>'0',
         	'category_id'=>'1',
-        	'status'=>true,
+            'brand_id'=>'1',
+        	'quantity'=>50,
         	'isdelete'=>false,
         	'isdisplay'=>true,
         ]);
@@ -54,7 +66,8 @@ class Product extends Seeder
         	'image'=>'n2.jpg',
         	'promotion'=>'0',
         	'category_id'=>'1',
-        	'status'=>true,
+            'brand_id'=>'1',
+        	'quantity'=>20,
         	'isdelete'=>false,
         	'isdisplay'=>true,
         ]);

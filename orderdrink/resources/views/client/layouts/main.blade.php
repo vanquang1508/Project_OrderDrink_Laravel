@@ -34,8 +34,6 @@
 
   <!--Header-->
   @include("client.shared.header")
-  <!--Categoris-->
-  @include("client.shared.categoriProduct")
   <!--TagScroller-->
   @include("client.shared.tagscroller")
   <!--Main-->

@@ -68,6 +68,14 @@
         });
 });
 </script>
+</script>
+     <!-- lấy id của hàng dc cho gắn vào form modal -->
+    <script type="text/javascript">
+    $(document).on('click','.deletebutton',function(){
+        var userID=$(this).attr('data-id');
+        $('#id').val(userID);
+    });
+</script>
 @yield('scriptAdmin')
 </body>
 </html>

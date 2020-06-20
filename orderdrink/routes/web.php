@@ -15,8 +15,8 @@ Route::group(['namespace'=>'Admin'],function (){
 });
 
 //Client
-Route::group(['namespace'=>'Client','prefix'=>'/'],function (){
-    Route::get('/', 'HomeController@index');
+Route::group(['namespace'=>'Client','prefix'=>''],function (){
+    Route::get('/', 'HomeController@index')->name('trangchu');
     Route::resource('product', 'HomeController');
     Route::resource('loginClient','LoginController');
     Route::resource('cart','CartController');
